@@ -1,0 +1,38 @@
+div[id='banner'] {
+    text-align: center;
+    font-size: 1.5vw;
+    }
+    h1#res {
+    margin-top: 2vw;
+    margin-left: 2vw;
+    }
+    * {
+        background-color: rgb(97, 7, 97);
+        color: aliceblue;
+    }
+    a{
+        text-decoration: none;
+        font: normal normal normal 1.2vw sans-serif;
+    }
+    img {
+        float:left;
+        margin: 1vw;
+        max-width: 20vw;
+        max-height: 25%;
+    }
+    input {
+        background-color: whitesmoke;
+        color:black;
+    }
+    input[type='text'] {
+        width: 50vw;
+        height: 3vw;
+        font-size: 1.5vw;
+    }
+    input[type='submit'] {
+        color:#ff0066;
+        height: 3vw;
+        width: 10vw;
+        border-radius: 0.5vw;
+        font-size: 1.5vw;
+    }

@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="Author" content="Rishabh Bhaskar">
+        <meta name="viewport" content="width=device-width, initial scale=1.0">
+        <title>Zee streaming site</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="banner" ><h1>Zee5 movie stream</h1></div>
+        <form onsubmit="Query(); return false;">
+            <input type="text" name="search" id="search" autocomplete="off" placeholder="Search a movie,TV show,web series etc.">
+            <input type="submit">
+        </form>
+        <h1 id="res">Results</h1>
+        <div id="results"></div>
+        <script>
+           function Query()
+           {
+               let q = document.getElementById('search').value;
+               fetch("index2.php?search="+q)
+               .then(function (response) {
+                return response.text(); })
+                .then(function (text) {
+                    let lst = JSON.parse(text);
+                    for(let ind =0;ind<lst.length;ind++)
+                    {
+                        document.getElementById('results').innerHTML += "<a href='player.php?id="+lst[ind].id+"'><img src="+lst[ind].img_url+"><div class='card_details'><h2>"+lst[ind].title+"</h2><p>"+lst[ind].dscr+"</p><h4>Language : "+lst[ind].lang+"</h4></div></a></br>";
+                    } })
+           }
+        </script>
+    </body>
+</html>
